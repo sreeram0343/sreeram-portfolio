@@ -52,7 +52,11 @@ This project is optimized for Vercel.
 
 1.  Push your code to a GitHub repository.
 2.  Import the project into Vercel.
-3.  Vercel will detect Next.js and deploy automatically.
+3.  **IMPORTANT**: Since the project is in a subdirectory, when importing:
+    *   Click **Edit** next to **Root Directory**.
+    *   Select `next-portfolio` (or enter `next-portfolio`).
+    *   Click **Continue**.
+4.  Vercel will detect Next.js and deploy automatically.
 
 ### GitHub Pages
 To deploy to GitHub Pages, you may need to update `next.config.ts` with `output: 'export'`, but Vercel is recommended for full feature support.
