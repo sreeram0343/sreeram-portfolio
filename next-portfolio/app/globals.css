@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #030014;
+  --color-foreground: #e2e8f0;
+
+  --color-primary: #8b5cf6;
+  --color-primary-foreground: #ffffff;
+
+  --color-secondary: #06b6d4;
+  --color-secondary-foreground: #ffffff;
+
+  --color-accent: #f472b6;
+
+  --color-card: rgba(30, 27, 75, 0.4);
+  --color-card-foreground: #e2e8f0;
+
+  --font-heading: var(--font-heading);
+  --font-body: var(--font-body);
+
+  --animate-spotlight: spotlight 2s ease .75s 1 forwards;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-glow: pulse-glow 3s infinite;
+}
+
+:root {
+  --primary: #8b5cf6;
+  --secondary: #06b6d4;
+}
+
+body {
+  color: var(--color-foreground);
+  background: var(--color-background);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+}
+
+/* Utilities */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-glow {
+  box-shadow: 0 0 80px -20px var(--color-primary);
+}
+
+/* Animations */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes spotlight {
+  0% {
+    opacity: 0;
+    transform: translate(-72%, -62%) scale(0.5);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -40%) scale(1);
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #020010;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #332d5e;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
