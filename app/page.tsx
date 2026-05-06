@@ -6,11 +6,11 @@ import { siteConfig, navLinks, projects, education, skills, certifications, achi
 
 function SectionMarker({ num, label }: { num: string; label: string }) {
   return (
-    <div className="flex items-center gap-4 mb-20">
+    <div className="flex items-center gap-4 mb-12 md:mb-20">
       <span className="font-mono text-xs text-accent tracking-widest">
         {num}
       </span>
-      <span className="font-mono text-xs text-muted-foreground tracking-[0.22em] uppercase">
+      <span className="font-mono text-xs text-muted-foreground tracking-[0.22em] uppercase text-[10px] md:text-xs">
         {label}
       </span>
       <div className="flex-1 h-px bg-border ml-2" />
@@ -33,12 +33,12 @@ function Nav() {
         scrolled ? "bg-background/90 backdrop-blur-md border-b border-border" : ""
       }`}
     >
-      <div className="max-w-7xl mx-auto px-8 lg:px-16 py-6 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 md:px-16 py-4 md:py-6 flex items-center justify-between">
         <a
           href="#"
-          className="font-mono text-xs tracking-[0.25em] text-foreground uppercase hover:text-accent transition-colors duration-200"
+          className="font-mono text-lg font-bold tracking-[0.25em] text-foreground uppercase hover:text-accent transition-colors duration-200"
         >
-          {siteConfig.name.split(' ').map(n => n[0]).join('.')}
+          4
         </a>
         <div className="hidden md:flex items-center gap-10">
           {navLinks.map((link) => (
@@ -59,6 +59,16 @@ function Nav() {
             Resume ↗
           </a>
         </div>
+        
+        {/* Simple Mobile Resume Link */}
+        <a
+            href={siteConfig.resumeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="md:hidden font-mono text-[10px] tracking-widest border border-border px-3 py-1.5 text-foreground uppercase"
+          >
+            CV ↗
+          </a>
       </div>
     </nav>
   );
@@ -66,13 +76,13 @@ function Nav() {
 
 function Hero() {
   return (
-    <section className="min-h-screen flex flex-col justify-end pb-16 pt-36 px-8 lg:px-16 max-w-7xl mx-auto">
-      <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-16 items-end">
+    <section className="min-h-screen flex flex-col justify-end pb-16 pt-36 px-6 md:px-16 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-12 md:gap-16 items-end">
         <div>
-          <p className="font-mono text-xs text-accent tracking-[0.35em] uppercase mb-10">
+          <p className="font-mono text-[10px] md:text-xs text-accent tracking-[0.35em] uppercase mb-6 md:mb-10">
             {siteConfig.title.split('|')[0]} &nbsp;·&nbsp; {siteConfig.location.split(',')[0]}
           </p>
-          <h1 className="font-serif font-light text-[clamp(60px,10vw,140px)] leading-[0.86] tracking-tight text-foreground">
+          <h1 className="font-serif font-light text-[clamp(48px,12vw,140px)] leading-[0.9] tracking-tight text-foreground">
             {siteConfig.name.split(' ')[0]}
             <br />
             {siteConfig.name.split(' ').slice(1).join(' ')}
@@ -81,7 +91,7 @@ function Hero() {
         </div>
 
         <div className="pb-1">
-          <p className="font-sans font-light text-foreground/70 text-lg leading-[1.85] mb-10">
+          <p className="font-sans font-light text-foreground/70 text-base md:text-lg leading-[1.85] mb-10">
             {siteConfig.description}
           </p>
           <div className="flex items-center gap-6 flex-wrap">
@@ -112,13 +122,13 @@ function Hero() {
 
       <div className="mt-20 h-px bg-border" />
 
-      <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-6">
+      <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-6">
         {stats.map((stat) => (
           <div key={stat.label} className="flex items-baseline gap-3">
-            <span className="font-serif font-light text-3xl text-foreground">
+            <span className="font-serif font-light text-2xl md:text-3xl text-foreground">
               {stat.value}
             </span>
-            <span className="font-mono text-xs text-muted-foreground tracking-wide leading-tight">
+            <span className="font-mono text-[10px] md:text-xs text-muted-foreground tracking-wide leading-tight">
               {stat.label}
             </span>
           </div>
@@ -130,23 +140,25 @@ function Hero() {
 
 function About() {
   return (
-    <section id="about" className="py-32 px-8 lg:px-16 max-w-7xl mx-auto">
+    <section id="about" className="py-20 md:py-32 px-6 md:px-16 max-w-7xl mx-auto">
       <SectionMarker num="—" label="About" />
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-24">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-24">
         <div>
-          <p className="font-serif font-light text-2xl leading-[1.8] text-foreground/85 mb-8 italic">
+          <p className="font-serif font-light text-xl md:text-2xl leading-[1.8] text-foreground/85 mb-8 italic">
             I am a B.Tech Computer Science and Engineering student passionate about Artificial Intelligence and Machine Learning.
           </p>
-          <p className="font-sans font-light text-foreground/55 leading-[1.95] text-base mb-7">
-            Currently studying at APJ Abdul Kalam Technological University (KTU), I focus on building impactful real-world systems, AI products, and scalable applications. My interest extends to startup innovation and emerging technologies.
-          </p>
-          <p className="font-sans font-light text-foreground/55 leading-[1.95] text-base">
-            I enjoy transforming complex problems into intelligent automation solutions, from AI-driven monitoring platforms to computer vision systems.
-          </p>
+          <div className="space-y-6">
+            <p className="font-sans font-light text-foreground/55 leading-[1.95] text-base">
+              Currently studying at APJ Abdul Kalam Technological University (KTU), I focus on building impactful real-world systems, AI products, and scalable applications. My interest extends to startup innovation and emerging technologies.
+            </p>
+            <p className="font-sans font-light text-foreground/55 leading-[1.95] text-base">
+              I enjoy transforming complex problems into intelligent automation solutions, from AI-driven monitoring platforms to computer vision systems.
+            </p>
+          </div>
         </div>
 
         <div>
-          <div className="mb-10 overflow-hidden bg-muted rounded-lg">
+          <div className="mb-12 overflow-hidden bg-muted rounded-lg">
             <img
               src="/sreeram-profile.png"
               alt="Sreeram M R"
@@ -155,7 +167,7 @@ function About() {
             />
           </div>
 
-          <div className="grid grid-cols-2 gap-x-8 gap-y-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-10">
             {skills.slice(0, 4).map((skill) => (
               <div key={skill.category}>
                 <p className="font-mono text-xs text-accent tracking-[0.22em] uppercase mb-4">
@@ -184,7 +196,7 @@ function Work() {
   const [hovered, setHovered] = useState<number | null>(null);
 
   return (
-    <section id="projects" className="py-32 px-8 lg:px-16 max-w-7xl mx-auto">
+    <section id="projects" className="py-20 md:py-32 px-6 md:px-16 max-w-7xl mx-auto">
       <SectionMarker num="01" label="Selected Work" />
 
       <div>
@@ -195,22 +207,22 @@ function Work() {
             onMouseEnter={() => setHovered(i)}
             onMouseLeave={() => setHovered(null)}
           >
-            <div className="py-12">
+            <div className="py-10 md:py-12">
               <div className="grid grid-cols-1 lg:grid-cols-[48px_1fr_180px] gap-6 lg:gap-12 items-start">
-                <span className="font-mono text-xs text-accent tracking-widest pt-2">
+                <span className="hidden md:block font-mono text-xs text-accent tracking-widest pt-2">
                   0{i + 1}
                 </span>
 
                 <div>
-                  <div className="flex flex-wrap items-baseline gap-4 mb-4">
+                  <div className="flex flex-col sm:flex-row sm:items-baseline gap-2 md:gap-4 mb-4">
                     <h3
-                      className={`font-serif font-light text-4xl lg:text-5xl transition-colors duration-300 ${
+                      className={`font-serif font-light text-3xl md:text-4xl lg:text-5xl transition-colors duration-300 ${
                         hovered === i ? "text-accent" : "text-foreground"
                       }`}
                     >
                       {p.title}
                     </h3>
-                    <span className="font-sans font-light text-sm text-muted-foreground">
+                    <span className="font-sans font-light text-xs md:text-sm text-muted-foreground">
                       {p.date}
                     </span>
                   </div>
@@ -227,7 +239,7 @@ function Work() {
                     ))}
                   </div>
 
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 mb-6 lg:mb-0">
                     {p.techStack.map((tech) => (
                       <span
                         key={tech}
@@ -241,12 +253,12 @@ function Work() {
                   </div>
                 </div>
 
-                <div className="hidden lg:flex flex-col gap-4 items-end">
-                    <a href={p.links.github} target="_blank" rel="noopener noreferrer" className="p-3 rounded-full border border-border hover:border-accent hover:text-accent transition-all">
+                <div className="flex lg:flex-col gap-4 items-center lg:items-end">
+                    <a href={p.links.github} target="_blank" rel="noopener noreferrer" className="p-2 md:p-3 rounded-full border border-border hover:border-accent hover:text-accent transition-all">
                         <Github className="w-5 h-5" />
                     </a>
                     {p.links.demo && p.links.demo !== "#" && (
-                        <a href={p.links.demo} target="_blank" rel="noopener noreferrer" className="p-3 rounded-full border border-border hover:border-accent hover:text-accent transition-all">
+                        <a href={p.links.demo} target="_blank" rel="noopener noreferrer" className="p-2 md:p-3 rounded-full border border-border hover:border-accent hover:text-accent transition-all">
                             <ArrowUpRight className="w-5 h-5" />
                         </a>
                     )}
@@ -263,14 +275,14 @@ function Work() {
 
 function Experience() {
   return (
-    <section id="education" className="py-32 px-8 lg:px-16 max-w-7xl mx-auto">
+    <section id="education" className="py-20 md:py-32 px-6 md:px-16 max-w-7xl mx-auto">
       <SectionMarker num="02" label="Education" />
 
       <div>
         {education.map((edu, i) => (
           <div
             key={i}
-            className="grid grid-cols-1 lg:grid-cols-[200px_1fr] gap-4 lg:gap-20 py-12 border-t border-border"
+            className="grid grid-cols-1 lg:grid-cols-[200px_1fr] gap-6 lg:gap-20 py-10 md:py-12 border-t border-border"
           >
             <div className="pt-0.5">
               <p className="font-mono text-xs text-muted-foreground tracking-wide">
@@ -278,8 +290,8 @@ function Experience() {
               </p>
             </div>
             <div>
-              <div className="flex flex-wrap items-baseline gap-4 mb-3">
-                <h3 className="font-serif font-normal text-2xl text-foreground">
+              <div className="flex flex-col sm:flex-row sm:items-baseline gap-2 md:gap-4 mb-3">
+                <h3 className="font-serif font-normal text-xl md:text-2xl text-foreground">
                   {edu.degree}
                 </h3>
                 <span className="font-mono text-xs text-accent tracking-wide">
@@ -303,18 +315,18 @@ function Experience() {
 
 function CertsAndAchievements() {
   return (
-    <section id="certifications" className="py-32 px-8 lg:px-16 max-w-7xl mx-auto">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-32">
+    <section id="certifications" className="py-20 md:py-32 px-6 md:px-16 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 md:gap-32">
         <div>
           <SectionMarker num="03" label="Certifications" />
           <div className="space-y-8">
             {certifications.map((cert, i) => (
               <div key={i} className="flex justify-between items-center group cursor-default">
-                <div>
-                    <p className="font-serif text-xl text-foreground/80 group-hover:text-accent transition-colors">{cert.name}</p>
-                    <p className="font-mono text-[10px] text-muted-foreground uppercase tracking-widest">{cert.issuer} &nbsp;·&nbsp; {cert.year}</p>
+                <div className="pr-4">
+                    <p className="font-serif text-lg md:text-xl text-foreground/80 group-hover:text-accent transition-colors leading-tight">{cert.name}</p>
+                    <p className="font-mono text-[10px] text-muted-foreground uppercase tracking-widest mt-1">{cert.issuer} &nbsp;·&nbsp; {cert.year}</p>
                 </div>
-                <cert.icon className="w-5 h-5 text-muted-foreground group-hover:text-accent transition-colors" />
+                <cert.icon className="w-5 h-5 text-muted-foreground group-hover:text-accent transition-colors shrink-0" />
               </div>
             ))}
           </div>
@@ -322,12 +334,12 @@ function CertsAndAchievements() {
 
         <div>
           <SectionMarker num="04" label="Achievements" />
-          <div className="space-y-12">
+          <div className="space-y-10 md:space-y-12">
             {achievements.map((ach, i) => (
               <div key={i} className="group">
                 <div className="flex items-center gap-4 mb-4">
-                    <ach.icon className="w-5 h-5 text-accent" />
-                    <h3 className="font-serif text-2xl text-foreground">{ach.title}</h3>
+                    <ach.icon className="w-5 h-5 text-accent shrink-0" />
+                    <h3 className="font-serif text-xl md:text-2xl text-foreground leading-tight">{ach.title}</h3>
                 </div>
                 <p className="font-sans font-light text-foreground/55 text-sm leading-relaxed pl-9">
                     {ach.description}
@@ -343,12 +355,12 @@ function CertsAndAchievements() {
 
 function Contact() {
   return (
-    <section id="contact" className="py-32 px-8 lg:px-16 max-w-7xl mx-auto">
-      <div className="border-t border-border pt-32">
+    <section id="contact" className="py-20 md:py-32 px-6 md:px-16 max-w-7xl mx-auto">
+      <div className="border-t border-border pt-20 md:pt-32">
         <p className="font-mono text-xs text-accent tracking-[0.35em] uppercase mb-10">
           05 — Contact
         </p>
-        <h2 className="font-serif font-light text-[clamp(52px,8vw,112px)] leading-[0.88] tracking-tight text-foreground mb-16">
+        <h2 className="font-serif font-light text-[clamp(42px,8vw,112px)] leading-[0.9] tracking-tight text-foreground mb-12 md:mb-16">
           {"Let's build"}
           <br />
           something
@@ -363,7 +375,7 @@ function Contact() {
           <div className="flex flex-col sm:flex-row gap-4 lg:justify-end">
             <a
               href={`mailto:${siteConfig.email}`}
-              className="group font-mono flex items-center gap-2.5 bg-primary text-primary-foreground px-8 py-4 text-xs tracking-widest uppercase hover:bg-accent hover:text-white transition-all duration-200"
+              className="group font-mono flex items-center justify-center gap-2.5 bg-primary text-primary-foreground px-8 py-4 text-xs tracking-widest uppercase hover:bg-accent hover:text-white transition-all duration-200"
             >
               Send a Message
               <ArrowUpRight className="w-3 h-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -371,18 +383,18 @@ function Contact() {
           </div>
         </div>
 
-        <div className="mt-28 pt-8 border-t border-border flex flex-col sm:flex-row justify-between gap-5 items-start sm:items-center">
-          <p className="font-mono text-xs text-muted-foreground">
+        <div className="mt-28 pt-8 border-t border-border flex flex-col md:flex-row justify-between gap-6 items-start md:items-center">
+          <p className="font-mono text-[10px] md:text-xs text-muted-foreground">
             © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
           </p>
-          <div className="flex items-center gap-8">
+          <div className="flex items-center gap-6 md:gap-8 flex-wrap">
             {siteConfig.socials.map((social) => (
               <a
                 key={social.name}
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-mono text-xs text-muted-foreground hover:text-foreground transition-colors duration-200 tracking-wide"
+                className="font-mono text-[10px] md:text-xs text-muted-foreground hover:text-foreground transition-colors duration-200 tracking-wide"
               >
                 {social.name}
               </a>
