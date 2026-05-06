@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { ArrowUpRight, Github, Linkedin, Mail, FileText, ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowUpRight, Github, Linkedin, Mail, FileText, ArrowRight, CheckCircle2, Phone, MapPin } from "lucide-react";
 import { siteConfig, navLinks, projects, education, skills, certifications, achievements, stats } from "@/lib/data";
 
 function SectionMarker({ num, label }: { num: string; label: string }) {
@@ -158,11 +158,12 @@ function About() {
         </div>
 
         <div>
-          <div className="mb-12 overflow-hidden bg-muted rounded-lg">
+          <div className="mb-12 overflow-hidden bg-muted rounded-lg border border-border group relative">
+            <div className="absolute inset-0 bg-accent/10 group-hover:bg-transparent transition-all duration-700 z-10" />
             <img
               src="/sreeram-profile.png"
               alt="Sreeram M R"
-              className="w-full object-cover grayscale opacity-70 hover:opacity-90 hover:grayscale-0 transition-all duration-700"
+              className="w-full object-cover group-hover:scale-105 transition-all duration-700"
               style={{ aspectRatio: "4/3" }}
             />
           </div>
@@ -360,26 +361,84 @@ function Contact() {
         <p className="font-mono text-xs text-accent tracking-[0.35em] uppercase mb-10">
           05 — Contact
         </p>
-        <h2 className="font-serif font-light text-[clamp(42px,8vw,112px)] leading-[0.9] tracking-tight text-foreground mb-12 md:mb-16">
-          {"Let's build"}
-          <br />
-          something
-          <br />
-          <em>together.</em>
-        </h2>
+        
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 md:gap-32">
+          <div>
+            <h2 className="font-serif font-light text-[clamp(42px,8vw,112px)] leading-[0.9] tracking-tight text-foreground mb-12 md:mb-16">
+              {"Let's build"}
+              <br />
+              something
+              <br />
+              <em className="text-accent">together.</em>
+            </h2>
+            <p className="font-sans font-light text-foreground/55 text-lg leading-[1.85] max-w-md mb-12">
+              Open to AI/ML, software engineering, internships, collaborations, and innovative technology opportunities. I respond to every thoughtful message.
+            </p>
+            <div className="flex flex-col gap-6">
+                <a href={`mailto:${siteConfig.email}`} className="flex items-center gap-6 group">
+                    <div className="w-12 h-12 rounded-full border border-border flex items-center justify-center group-hover:border-accent group-hover:text-accent transition-all">
+                        <Mail className="w-5 h-5" />
+                    </div>
+                    <div>
+                        <p className="font-mono text-[10px] text-muted-foreground uppercase tracking-widest">Email</p>
+                        <p className="font-mono text-sm text-foreground group-hover:text-accent transition-colors">{siteConfig.email}</p>
+                    </div>
+                </a>
+                <a href={`tel:${siteConfig.phone}`} className="flex items-center gap-6 group">
+                    <div className="w-12 h-12 rounded-full border border-border flex items-center justify-center group-hover:border-accent group-hover:text-accent transition-all">
+                        <Phone className="w-5 h-5" />
+                    </div>
+                    <div>
+                        <p className="font-mono text-[10px] text-muted-foreground uppercase tracking-widest">Phone</p>
+                        <p className="font-mono text-sm text-foreground group-hover:text-accent transition-colors">{siteConfig.phone}</p>
+                    </div>
+                </a>
+                <div className="flex items-center gap-6 group">
+                    <div className="w-12 h-12 rounded-full border border-border flex items-center justify-center">
+                        <MapPin className="w-5 h-5" />
+                    </div>
+                    <div>
+                        <p className="font-mono text-[10px] text-muted-foreground uppercase tracking-widest">Location</p>
+                        <p className="font-mono text-sm text-foreground">{siteConfig.location}</p>
+                    </div>
+                </div>
+            </div>
+          </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
-          <p className="font-sans font-light text-foreground/55 text-lg leading-[1.85] max-w-md">
-            Open to AI/ML, software engineering, internships, collaborations, and innovative technology opportunities.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 lg:justify-end">
-            <a
-              href={`mailto:${siteConfig.email}`}
-              className="group font-mono flex items-center justify-center gap-2.5 bg-primary text-primary-foreground px-8 py-4 text-xs tracking-widest uppercase hover:bg-accent hover:text-white transition-all duration-200"
-            >
-              Send a Message
-              <ArrowUpRight className="w-3 h-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </a>
+          <div className="flex flex-col justify-end">
+            <div className="space-y-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div className="space-y-4">
+                        <label className="font-mono text-[10px] text-muted-foreground uppercase tracking-widest">Connect</label>
+                        <div className="flex flex-col gap-3">
+                            {siteConfig.socials.map(social => (
+                                <a key={social.name} href={social.href} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-sm font-light text-foreground/70 hover:text-accent transition-colors group">
+                                    <social.icon className="w-4 h-4" />
+                                    {social.name}
+                                    <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-all" />
+                                </a>
+                            ))}
+                        </div>
+                    </div>
+                    <div className="space-y-4">
+                        <label className="font-mono text-[10px] text-muted-foreground uppercase tracking-widest">Links</label>
+                        <div className="flex flex-col gap-3">
+                            <a href={siteConfig.resumeUrl} download className="flex items-center gap-3 text-sm font-light text-foreground/70 hover:text-accent transition-colors group">
+                                <FileText className="w-4 h-4" />
+                                Download Resume
+                                <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-all" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <a
+                  href={`mailto:${siteConfig.email}`}
+                  className="group block w-full font-mono bg-primary text-primary-foreground p-8 text-center text-xs tracking-[0.3em] uppercase hover:bg-accent hover:text-white transition-all duration-300"
+                >
+                  Send a Message
+                </a>
+            </div>
           </div>
         </div>
 
