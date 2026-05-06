@@ -433,10 +433,12 @@ function Contact() {
                 </div>
 
                 <a
-                  href={`mailto:${siteConfig.email}`}
+                  href="https://wa.me/917012163651"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group block w-full font-mono bg-primary text-primary-foreground p-8 text-center text-xs tracking-[0.3em] uppercase hover:bg-accent hover:text-white transition-all duration-300"
                 >
-                  Send a Message
+                  Send a Message on WhatsApp
                 </a>
             </div>
           </div>
