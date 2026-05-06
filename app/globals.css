@@ -28,6 +28,10 @@
   --secondary: #06b6d4;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   color: var(--color-foreground);
   background: var(--color-background);

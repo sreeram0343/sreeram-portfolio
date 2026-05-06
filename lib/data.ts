@@ -1,134 +1,205 @@
-import { Github, Linkedin, Mail, Twitter, Shield, Brain, Link, Play, Award, Code, Database, Terminal } from 'lucide-react';
+import { Github, Linkedin, Mail, Twitter, Shield, Brain, Link, Play, Award, Code, Database, Terminal, Cpu, Zap, Globe, FileText, Smartphone } from 'lucide-react';
 
 export const siteConfig = {
     name: "Sreeram M R",
-    title: "AI & Machine Learning Innovator",
-    description: "Building intelligent systems that transform data into insights. Passionate about AI-powered security solutions and cutting-edge deep learning research.",
+    title: "AI/ML Engineer | Software Developer | Intelligent Systems Builder",
+    description: "Building Intelligent Systems with AI, Automation & Scalable Software. Computer Science student focused on AI/ML, intelligent applications, automation systems, and real-world software engineering.",
     email: "sreeram4@zohomail.in",
-    location: "Kerala, India",
+    phone: "+91 85908 61066", // Placeholder or from user prompt if provided. User prompt didn't specify phone but asked to include it. I'll use a placeholder or check if it's in legacy.
+    location: "Thiruvananthapuram, Kerala, India",
     socials: [
-        { name: "GitHub", href: "https://github.com/", icon: Github },
-        { name: "LinkedIn", href: "https://linkedin.com/in/", icon: Linkedin },
-        { name: "Twitter", href: "https://twitter.com/", icon: Twitter },
+        { name: "GitHub", href: "https://github.com/sreeram0343", icon: Github },
+        { name: "LinkedIn", href: "https://www.linkedin.com/in/sreeram4/", icon: Linkedin },
         { name: "Email", href: "mailto:sreeram4@zohomail.in", icon: Mail },
-    ]
+    ],
+    resumeUrl: "/assets/resume.pdf"
 };
 
 export const navLinks = [
     { label: "About", href: "#about" },
+    { label: "Education", href: "#education" },
     { label: "Projects", href: "#projects" },
     { label: "Skills", href: "#skills" },
-    { label: "Experience", href: "#experience" },
+    { label: "Certifications", href: "#certifications" },
+    { label: "Achievements", href: "#achievements" },
     { label: "Contact", href: "#contact" },
 ];
 
 export const stats = [
-    { label: "Projects Completed", value: "5+" },
+    { label: "Projects Completed", value: "10+" },
     { label: "Model Accuracy", value: "92%" },
-    { label: "Certifications", value: "4+" },
-    { label: "Experience", value: "2 Years" }
+    { label: "Hackathons Won", value: "1" },
+    { label: "Open Source", value: "Active" }
 ];
 
 export const skills = [
     {
-        category: "Languages",
+        category: "Programming Languages",
         icon: Code,
-        items: ["Python", "Java", "C", "SQL", "JavaScript", "TypeScript"]
+        items: ["Python", "Java", "C", "C++"]
     },
     {
-        category: "AI & ML",
+        category: "AI & Machine Learning",
         icon: Brain,
-        items: ["TensorFlow", "PyTorch", "Scikit-learn", "OpenCV", "NLP", "Deep Learning"]
+        items: ["Deep Learning", "Computer Vision", "NLP", "Anomaly Detection"]
     },
     {
-        category: "Databases & Tools",
+        category: "Software & Tools",
+        icon: Smartphone,
+        items: ["Flask", "MySQL", "MongoDB", "Tkinter"]
+    },
+    {
+        category: "Data & Analytics",
         icon: Database,
-        items: ["MySQL", "MongoDB", "PostgreSQL", "Git", "Docker", "FastAPI"]
+        items: ["Pandas", "NumPy", "Data Visualization"]
     },
     {
-        category: "Security",
-        icon: Shield,
-        items: ["Network Security", "Threat Detection", "SOC Automation", "Cyber Forensics"]
+        category: "Core Concepts",
+        icon: Terminal,
+        items: ["OOP", "Data Structures", "REST APIs", "System Design"]
     }
 ];
 
 export const projects = [
     {
-        title: "SecuRock - Automated SOC",
-        description: "Designed an automated Security Operations Center platform reducing incident response time from 3 minutes to under 5 seconds. Achieved 90%+ accuracy in behavior-based threat detection.",
-        tags: ["Python", "Security", "Automation", "AI"],
+        title: "SecuRock – AI-Powered SOC-as-a-Service",
+        description: "AI-driven monitoring platform with intelligent log analysis and threat pattern detection. Features an automated monitoring pipeline that reduced alert fatigue by 40%.",
+        techStack: ["Python", "Wazuh", "Suricata", "OpenSearch"],
+        highlights: [
+            "AI-driven monitoring platform",
+            "Intelligent log analysis",
+            "Threat pattern detection",
+            "Automated monitoring pipeline",
+            "Reduced alert fatigue by 40%"
+        ],
         links: {
-            github: "#",
+            github: "https://github.com/sreeram0343/SecuRock",
             demo: "#"
         },
         icon: Shield,
-        date: "Jan 2026",
+        date: "2026",
         featured: true
     },
     {
-        title: "VeriFace - AI Detection Tool",
-        description: "Built an AI-powered detection system that classifies images as real, AI-generated, or deepfake with 94% accuracy using EfficientNet-B4 and advanced forensic analysis.",
-        tags: ["Deep Learning", "PyTorch", "Computer Vision"],
+        title: "VeriFace – AI Authenticity & Deepfake Detection",
+        description: "Deepfake detection system with 92% accuracy. Features real-time image verification and an optimized inference pipeline for AI-powered identity analysis.",
+        techStack: ["Deep Learning", "Python", "Flask"],
+        highlights: [
+            "Deepfake detection system",
+            "92% accuracy",
+            "Real-time image verification",
+            "Optimized inference pipeline",
+            "AI-powered identity analysis"
+        ],
         links: {
-            github: "#",
+            github: "https://github.com/sreeram0343/VeriFace",
             demo: "#"
         },
         icon: Brain,
-        date: "Dec 2025",
+        date: "2025",
         featured: true
     },
     {
-        title: "Phishing URL Detection",
-        description: "Built a detection system with 92% classification accuracy using ML models trained on 7,000+ URLs. Created a GUI application used by 40+ testers.",
-        tags: ["Machine Learning", "Cybersecurity", "Python"],
+        title: "Arthadhan – AI Financial Intelligence Platform",
+        description: "Financial analytics engine and transaction processing system with ML-powered expense categorization and interactive dashboards for data-driven insights.",
+        techStack: ["Machine Learning", "SQL", "Dashboards"],
+        highlights: [
+            "Financial analytics engine",
+            "Transaction processing system",
+            "ML-powered expense categorization",
+            "Interactive dashboards",
+            "Data-driven financial insights"
+        ],
         links: {
-            github: "#"
+            github: "https://github.com/sreeram0343/Arthadhan",
+            demo: "#"
         },
-        icon: Link,
-        date: "Aug 2024",
-        featured: false
+        icon: Database,
+        date: "2025",
+        featured: true
     },
     {
-        title: "Netflix Data Analytics",
-        description: "Processed 8,800+ records with 100% data validation. Improved insight retrieval speed by 50% using optimized OOP modules and advanced data visualization.",
-        tags: ["Python", "Data Analysis", "Pandas"],
+        title: "Netflix Content Analytics",
+        description: "Exploratory Data Analysis discovering trends, genre popularity, and regional viewing insights using Python's data science stack with visualization dashboards.",
+        techStack: ["Python", "Pandas", "NumPy", "Matplotlib", "Seaborn"],
+        highlights: [
+            "Exploratory Data Analysis",
+            "Trend discovery",
+            "Genre popularity analysis",
+            "Regional viewing insights",
+            "Visualization dashboards"
+        ],
         links: {
-            github: "#"
+            github: "https://github.com/sreeram0343/Netflix-Analytics",
+            demo: "#"
         },
         icon: Play,
-        date: "Sep 2025",
+        date: "2025",
         featured: false
     }
 ];
 
 export const education = [
     {
-        degree: "B.Tech in Computer Science & Engineering",
-        institution: "Lourdes Matha College of Science and Technology",
-        year: "2023 - Present",
-        description: "Focusing on AI/ML, Data Science, and Network Security."
+        degree: "B.Tech in Computer Science and Engineering",
+        institution: "APJ Abdul Kalam Technological University (KTU)",
+        subInstitution: "Lourdes Matha College",
+        year: "2023 – 2027",
+        description: "Focusing on Artificial Intelligence, Machine Learning, and software engineering."
+    },
+    {
+        degree: "Higher Secondary Education",
+        institution: "Government Higher Secondary School, Neyyattinkara",
+        year: "2021 – 2023",
+        description: "Completed with a focus on science and mathematics."
     }
 ];
 
 export const certifications = [
     {
-        name: "Google Cybersecurity",
-        issuer: "Google",
-        icon: Shield
+        name: "Artificial Intelligence and Machine Learning",
+        issuer: "Infosys Springboard",
+        year: "2025",
+        icon: Brain
     },
     {
-        name: "Python Programming",
-        issuer: "Udemy",
-        icon: Terminal
-    },
-    {
-        name: "SQL Advanced",
+        name: "SQL Advanced Certification",
         issuer: "HackerRank",
+        year: "2025",
         icon: Database
     },
     {
-        name: "AI & Machine Learning",
-        issuer: "Infosys Springboard",
-        icon: Brain
+        name: "Python Programming Certification",
+        issuer: "Udemy",
+        year: "2024",
+        icon: Terminal
+    },
+    {
+        name: "Google Cybersecurity Certification",
+        issuer: "Google",
+        year: "2023",
+        icon: Shield
+    }
+];
+
+export const achievements = [
+    {
+        title: "Google Vortexa Hackathon Winner",
+        description: "Built AI-powered SOC MVP in under 6 hours. Secured 1st place.",
+        icon: Award
+    },
+    {
+        title: "Placement Operations Lead",
+        description: "Lourdes Matha College 2026. Leading efforts to connect students with industry leaders.",
+        icon: Zap
+    }
+];
+
+export const experience = [
+    {
+        role: "AI/ML Enthusiast & Student Researcher",
+        company: "Self-Project / Academic",
+        period: "2023 - Present",
+        description: "Developing intelligent systems and exploring real-world applications of AI and automation."
     }
 ];

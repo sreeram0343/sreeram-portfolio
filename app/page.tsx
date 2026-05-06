@@ -3,10 +3,11 @@
 import { Navbar } from "@/components/layout/navbar";
 import { HeroSection } from "@/components/sections/hero";
 import { AboutSection } from "@/components/sections/about";
-import { SkillsSection } from "@/components/sections/skills";
+import { EducationSection } from "@/components/sections/education";
 import { ProjectsSection } from "@/components/sections/projects";
-import { ExperienceSection } from "@/components/sections/experience";
+import { SkillsSection } from "@/components/sections/skills";
 import { CertificationsSection } from "@/components/sections/certifications";
+import { AchievementsSection } from "@/components/sections/achievements";
 import { ContactSection } from "@/components/sections/contact";
 import { Footer } from "@/components/layout/footer";
 import { ShaderBackground } from "@/components/ui/shader-background";
@@ -19,10 +20,11 @@ export default function Home() {
         <Navbar />
         <HeroSection />
         <AboutSection />
-        <SkillsSection />
+        <EducationSection />
         <ProjectsSection />
-        <ExperienceSection />
+        <SkillsSection />
         <CertificationsSection />
+        <AchievementsSection />
         <ContactSection />
         <Footer />
       </div>

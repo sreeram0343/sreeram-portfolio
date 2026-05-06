@@ -1,10 +1,11 @@
 "use client";
 
-import { useMemo, useRef } from "react";
+import { useEffect, useState, useMemo, useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { motion, AnimatePresence } from "framer-motion";
 
 gsap.registerPlugin(useGSAP);
 
@@ -13,15 +14,34 @@ interface HeroProps {
     description: string;
     badgeText?: string;
     badgeLabel?: string;
-    ctaButtons?: Array<{ text: string; href?: string; primary?: boolean }>;
+    ctaButtons?: Array<{ text: string; href?: string; primary?: boolean; download?: boolean }>;
     microDetails?: Array<string>;
 }
+
+const TypingEffect = ({ text, delay = 0 }: { text: string; delay?: number }) => {
+    const [displayedText, setDisplayedText] = useState("");
+    
+    useEffect(() => {
+        const timeout = setTimeout(() => {
+            let i = 0;
+            const interval = setInterval(() => {
+                setDisplayedText(text.slice(0, i + 1));
+                i++;
+                if (i >= text.length) clearInterval(interval);
+            }, 50);
+            return () => clearInterval(interval);
+        }, delay * 1000);
+        return () => clearTimeout(timeout);
+    }, [text, delay]);
+
+    return <span>{displayedText}</span>;
+};
 
 const SyntheticHero = ({
     title,
     description,
-    badgeText = "System Online",
-    badgeLabel = "Status",
+    badgeText = "AI Engineer",
+    badgeLabel = "Focus",
     ctaButtons = [],
     microDetails = [],
 }: HeroProps) => {
@@ -67,19 +87,16 @@ const SyntheticHero = ({
     return (
         <section
             ref={sectionRef}
-            className="relative flex items-center justify-center min-h-[90vh] overflow-hidden"
+            className="relative flex items-center justify-center min-h-screen overflow-hidden py-20"
         >
-            {/* Canvas removed from here, now global */}
-
-            {/* Clean, minimalist content layer */}
-            <div className="relative z-10 flex flex-col items-center text-center px-6 max-w-5xl mx-auto pt-20">
+            <div className="relative z-10 flex flex-col items-center text-center px-6 max-w-5xl mx-auto">
                 <div ref={badgeWrapperRef}>
-                    <Badge className="mb-8 bg-white/5 hover:bg-white/10 text-primary-foreground backdrop-blur-md border border-primary/20 uppercase tracking-wider font-medium flex items-center gap-2 px-4 py-1.5 shadow-[0_0_20px_-10px_var(--primary)]">
-                        <span className="text-[10px] font-light tracking-[0.18em] text-primary-foreground/70">
+                    <Badge className="mb-8 bg-white/5 hover:bg-white/10 text-white backdrop-blur-md border border-primary/20 uppercase tracking-wider font-medium flex items-center gap-2 px-4 py-1.5 shadow-[0_0_20px_-10px_var(--primary)]">
+                        <span className="text-[10px] font-light tracking-[0.18em] text-primary/70">
                             {badgeLabel}
                         </span>
-                        <span className="h-1 w-1 rounded-full bg-green-400 animate-pulse" />
-                        <span className="text-xs font-light tracking-tight text-white">
+                        <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse shadow-[0_0_8px_var(--primary)]" />
+                        <span className="text-xs font-light tracking-tight">
                             {badgeText}
                         </span>
                     </Badge>
@@ -87,14 +104,15 @@ const SyntheticHero = ({
 
                 <h1
                     ref={headingRef}
-                    className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold tracking-tight text-white mb-6 leading-tight drop-shadow-2xl"
+                    className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold tracking-tight text-white mb-6 leading-[1.1] drop-shadow-2xl"
                 >
-                    {title}
+                    <TypingEffect text={title} delay={0.5} />
+                    <span className="inline-block w-[2px] h-[0.8em] bg-primary ml-1 animate-pulse align-middle" />
                 </h1>
 
                 <p
                     ref={paragraphRef}
-                    className="text-foreground/80 text-lg md:text-xl max-w-2xl mx-auto mb-10 font-light leading-relaxed"
+                    className="text-foreground/70 text-lg md:text-xl max-w-3xl mx-auto mb-10 font-light leading-relaxed"
                 >
                     {description}
                 </p>
@@ -110,7 +128,8 @@ const SyntheticHero = ({
                             size="lg"
                             href={button.href}
                             as="a"
-                            className={!button.primary ? "bg-white/5 border-white/10 text-white hover:bg-white/10 backdrop-blur-sm" : "backdrop-blur-sm bg-primary/90"}
+                            download={button.download}
+                            className={!button.primary ? "bg-white/5 border-white/10 text-white hover:bg-white/10 backdrop-blur-sm transition-all duration-300 hover:scale-105" : "backdrop-blur-sm bg-primary/90 hover:bg-primary transition-all duration-300 hover:scale-105 shadow-[0_0_20px_-5px_var(--primary)]"}
                         >
                             {button.text}
                         </Button>
@@ -120,11 +139,11 @@ const SyntheticHero = ({
                 {microDetails.length > 0 && (
                     <ul
                         ref={microRef}
-                        className="mt-12 flex flex-wrap justify-center gap-8 text-xs font-medium tracking-widest uppercase text-foreground/50"
+                        className="mt-16 flex flex-wrap justify-center gap-x-12 gap-y-4 text-[10px] font-medium tracking-[0.2em] uppercase text-foreground/40"
                     >
                         {microDetails.map((detail, index) => (
-                            <li key={index} className="flex items-center gap-2">
-                                <span className="h-1 w-1 rounded-full bg-primary/50 shadow-[0_0_10px_var(--primary)]" />
+                            <li key={index} className="flex items-center gap-3">
+                                <span className="h-px w-4 bg-primary/30" />
                                 {detail}
                             </li>
                         ))}
