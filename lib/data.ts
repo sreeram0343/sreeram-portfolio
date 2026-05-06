@@ -5,7 +5,7 @@ export const siteConfig = {
     title: "AI/ML Engineer | Software Developer | Intelligent Systems Builder",
     description: "Building Intelligent Systems with AI, Automation & Scalable Software. Computer Science student focused on AI/ML, intelligent applications, automation systems, and real-world software engineering.",
     email: "sreeram4@zohomail.in",
-    phone: "+91 85908 61066", // Placeholder or from user prompt if provided. User prompt didn't specify phone but asked to include it. I'll use a placeholder or check if it's in legacy.
+    phone: "+91 70121 63651",
     location: "Thiruvananthapuram, Kerala, India",
     socials: [
         { name: "GitHub", href: "https://github.com/sreeram0343", icon: Github },
