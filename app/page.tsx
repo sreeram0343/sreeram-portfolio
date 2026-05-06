@@ -91,7 +91,7 @@ function Hero() {
         </div>
 
         <div className="pb-1">
-          <p className="font-sans font-light text-foreground/70 text-base md:text-lg leading-[1.85] mb-10">
+          <p className="font-sans font-light text-foreground text-base md:text-lg leading-[1.85] mb-10">
             {siteConfig.description}
           </p>
           <div className="flex items-center gap-6 flex-wrap">
@@ -144,14 +144,14 @@ function About() {
       <SectionMarker num="—" label="About" />
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-24">
         <div>
-          <p className="font-serif font-light text-xl md:text-2xl leading-[1.8] text-foreground/85 mb-8 italic">
+          <p className="font-serif font-light text-xl md:text-2xl leading-[1.8] text-foreground mb-8 italic">
             I am a B.Tech Computer Science and Engineering student passionate about Artificial Intelligence and Machine Learning.
           </p>
           <div className="space-y-6">
-            <p className="font-sans font-light text-foreground/55 leading-[1.95] text-base">
+            <p className="font-sans font-light text-foreground leading-[1.95] text-base">
               Currently studying at APJ Abdul Kalam Technological University (KTU), I focus on building impactful real-world systems, AI products, and scalable applications. My interest extends to startup innovation and emerging technologies.
             </p>
-            <p className="font-sans font-light text-foreground/55 leading-[1.95] text-base">
+            <p className="font-sans font-light text-foreground leading-[1.95] text-base">
               I enjoy transforming complex problems into intelligent automation solutions, from AI-driven monitoring platforms to computer vision systems.
             </p>
           </div>
@@ -227,13 +227,13 @@ function Work() {
                       {p.date}
                     </span>
                   </div>
-                  <p className="font-sans font-light text-foreground/55 leading-relaxed text-base max-w-xl mb-6">
+                  <p className="font-sans font-light text-foreground leading-relaxed text-base max-w-xl mb-6">
                     {p.description}
                   </p>
                   
                   <div className="space-y-2 mb-6">
                     {p.highlights.map((highlight, hIndex) => (
-                        <div key={hIndex} className="flex items-start gap-3 text-sm text-foreground/60 font-light">
+                        <div key={hIndex} className="flex items-start gap-3 text-sm text-foreground/80 font-light">
                             <CheckCircle2 className="w-4 h-4 text-accent shrink-0 mt-0.5" />
                             <span>{highlight}</span>
                         </div>
@@ -245,7 +245,7 @@ function Work() {
                       <span
                         key={tech}
                         className={`font-mono text-[10px] uppercase tracking-wider border px-3 py-1 text-muted-foreground transition-colors duration-300 ${
-                          hovered === i ? "border-accent/25 text-foreground/60" : "border-border"
+                          hovered === i ? "border-accent/25 text-foreground/80" : "border-border"
                         }`}
                       >
                         {tech}
@@ -302,7 +302,7 @@ function Experience() {
               {edu.subInstitution && (
                   <p className="font-mono text-[10px] text-muted-foreground uppercase tracking-widest mb-4">{edu.subInstitution}</p>
               )}
-              <p className="font-sans font-light text-foreground/55 text-sm leading-relaxed">
+              <p className="font-sans font-light text-foreground text-sm leading-relaxed">
                 {edu.description}
               </p>
             </div>
@@ -342,7 +342,7 @@ function CertsAndAchievements() {
                     <ach.icon className="w-5 h-5 text-accent shrink-0" />
                     <h3 className="font-serif text-xl md:text-2xl text-foreground leading-tight">{ach.title}</h3>
                 </div>
-                <p className="font-sans font-light text-foreground/55 text-sm leading-relaxed pl-9">
+                <p className="font-sans font-light text-foreground text-sm leading-relaxed pl-9">
                     {ach.description}
                 </p>
               </div>
@@ -371,7 +371,7 @@ function Contact() {
               <br />
               <em className="text-accent">together.</em>
             </h2>
-            <p className="font-sans font-light text-foreground/55 text-lg leading-[1.85] max-w-md mb-12">
+            <p className="font-sans font-light text-foreground text-lg leading-[1.85] max-w-md mb-12">
               Open to AI/ML, software engineering, internships, collaborations, and innovative technology opportunities. I respond to every thoughtful message.
             </p>
             <div className="flex flex-col gap-6">
@@ -412,7 +412,7 @@ function Contact() {
                         <label className="font-mono text-[10px] text-muted-foreground uppercase tracking-widest">Connect</label>
                         <div className="flex flex-col gap-3">
                             {siteConfig.socials.map(social => (
-                                <a key={social.name} href={social.href} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-sm font-light text-foreground/70 hover:text-accent transition-colors group">
+                                <a key={social.name} href={social.href} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-sm font-light text-foreground hover:text-accent transition-colors group">
                                     <social.icon className="w-4 h-4" />
                                     {social.name}
                                     <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-all" />
@@ -423,7 +423,7 @@ function Contact() {
                     <div className="space-y-4">
                         <label className="font-mono text-[10px] text-muted-foreground uppercase tracking-widest">Links</label>
                         <div className="flex flex-col gap-3">
-                            <a href={siteConfig.resumeUrl} download className="flex items-center gap-3 text-sm font-light text-foreground/70 hover:text-accent transition-colors group">
+                            <a href={siteConfig.resumeUrl} download className="flex items-center gap-3 text-sm font-light text-foreground hover:text-accent transition-colors group">
                                 <FileText className="w-4 h-4" />
                                 Download Resume
                                 <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-all" />

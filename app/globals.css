@@ -14,10 +14,10 @@
   --color-accent-foreground: #ffffff;
 
   --color-muted: #dcd9e8;
-  --color-muted-foreground: #717182;
+  --color-muted-foreground: #374151;
 
-  --color-border: rgba(0, 0, 0, 0.1);
-  --color-card: rgba(255, 255, 255, 0.5);
+  --color-border: rgba(0, 0, 0, 0.15);
+  --color-card: rgba(255, 255, 255, 0.6);
   --color-card-foreground: #030213;
 
   --font-mono: var(--font-mono);
