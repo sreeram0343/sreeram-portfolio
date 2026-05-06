@@ -12,6 +12,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string;
     as?: any;
     href?: string;
+    download?: boolean | string;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
