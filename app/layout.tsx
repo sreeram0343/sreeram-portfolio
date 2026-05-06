@@ -1,22 +1,29 @@
 import type { Metadata } from "next";
-import { Inter, Outfit } from "next/font/google";
+import { Inter, JetBrains_Mono, Epilogue, Spectral } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
+const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
-  variable: "--font-body",
+  variable: "--font-mono",
   display: "swap",
 });
 
-const outfit = Outfit({
+const epilogue = Epilogue({
   subsets: ["latin"],
-  variable: "--font-heading",
+  variable: "--font-sans",
+  display: "swap",
+});
+
+const spectral = Spectral({
+  subsets: ["latin"],
+  weight: ["200", "300", "400", "500", "600", "700", "800"],
+  variable: "--font-serif",
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Sreeram M R | AI & Machine Learning Innovator",
-  description: "Portfolio of an AI/ML Innovator building intelligent security solutions.",
+  title: "Sreeram M R | AI/ML Engineer",
+  description: "Building Intelligent Systems with AI, Automation & Scalable Software.",
 };
 
 export default function RootLayout({
@@ -25,9 +32,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en">
       <body
-        className={`${inter.variable} ${outfit.variable} antialiased`}
+        className={`${jetbrainsMono.variable} ${epilogue.variable} ${spectral.variable} antialiased`}
       >
         {children}
       </body>
