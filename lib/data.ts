@@ -28,7 +28,7 @@ export const navLinks = [
 export const stats = [
     { label: "Projects Completed", value: "10+" },
     { label: "Model Accuracy", value: "92%" },
-    { label: "Hackathons Won", value: "1" },
+    { label: "Hackathons Won", value: "3" },
     { label: "Open Source", value: "Active" }
 ];
 
