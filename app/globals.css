@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #ffffff;
+  --color-background: #ece9f5;
   --color-foreground: #030213;
 
   --color-primary: #030213;
@@ -13,11 +13,11 @@
   --color-accent: #8b5cf6; /* Keeping a bit of the purple as accent */
   --color-accent-foreground: #ffffff;
 
-  --color-muted: #ececf0;
+  --color-muted: #dcd9e8;
   --color-muted-foreground: #717182;
 
   --color-border: rgba(0, 0, 0, 0.1);
-  --color-card: #ffffff;
+  --color-card: rgba(255, 255, 255, 0.5);
   --color-card-foreground: #030213;
 
   --font-mono: var(--font-mono);
@@ -26,7 +26,7 @@
 }
 
 :root {
-  --background: #ffffff;
+  --background: #ece9f5;
   --foreground: #030213;
   --primary: #030213;
   --accent: #8b5cf6;
