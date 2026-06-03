@@ -3,7 +3,7 @@ import { Github, Linkedin, Mail, Twitter, Shield, Brain, Link, Play, Award, Code
 export const siteConfig = {
     name: "Sreeram M R",
     title: "AI/ML Engineer | Software Developer | Intelligent Systems Builder",
-    description: "Building Intelligent Systems with AI, Automation & Scalable Software. Computer Science student focused on AI/ML, intelligent applications, automation systems, and real-world software engineering.",
+    description: "Building Intelligent Systems with AI, Automation & Scalable Software. Computer Science student focused on AI/ML, intelligent applications, automation systems, and real-world softw[...]
     email: "sreeram4@zohomail.in",
     phone: "+91 70121 63651",
     location: "Thiruvananthapuram, Kerala, India",
@@ -73,7 +73,7 @@ export const projects = [
             "Reduced alert fatigue by 40%"
         ],
         links: {
-            github: "https://github.com/sreeram0343/SecuRock",
+            github: "https://github.com/sreeram0343/SecuRock-SOCaaS-MVP",
             demo: "#"
         },
         icon: Shield,
@@ -92,7 +92,7 @@ export const projects = [
             "AI-powered identity analysis"
         ],
         links: {
-            github: "https://github.com/sreeram0343/VeriFace",
+            github: "https://github.com/aswanims2808/Veriface",
             demo: "#"
         },
         icon: Brain,
@@ -130,7 +130,7 @@ export const projects = [
             "Visualization dashboards"
         ],
         links: {
-            github: "https://github.com/sreeram0343/Netflix-Analytics",
+            github: "https://github.com/sreeram0343/projects/tree/main/Netflix_EDA",
             demo: "#"
         },
         icon: Play,
