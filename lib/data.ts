@@ -3,7 +3,7 @@ import { Github, Linkedin, Mail, Twitter, Shield, Brain, Link, Play, Award, Code
 export const siteConfig = {
     name: "Sreeram M R",
     title: "AI/ML Engineer | Software Developer | Intelligent Systems Builder",
-    description: "Building Intelligent Systems with AI, Automation & Scalable Software. Computer Science student focused on AI/ML, intelligent applications, automation systems, and real-world softw[...]
+    description: "Building Intelligent Systems with AI, Automation & Scalable Software. Computer Science student focused on AI/ML, intelligent applications, automation systems, and real-world software solutions.",
     email: "sreeram4@zohomail.in",
     phone: "+91 70121 63651",
     location: "Thiruvananthapuram, Kerala, India",
