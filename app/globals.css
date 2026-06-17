@@ -1,24 +1,24 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #ece9f5;
-  --color-foreground: #030213;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
 
-  --color-primary: #030213;
-  --color-primary-foreground: #ffffff;
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
 
-  --color-secondary: #f3f3f5;
-  --color-secondary-foreground: #030213;
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
 
-  --color-accent: #8b5cf6; /* Keeping a bit of the purple as accent */
-  --color-accent-foreground: #ffffff;
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
 
-  --color-muted: #dcd9e8;
-  --color-muted-foreground: #374151;
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
 
-  --color-border: rgba(0, 0, 0, 0.15);
-  --color-card: rgba(255, 255, 255, 0.6);
-  --color-card-foreground: #030213;
+  --color-border: var(--border);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
 
   --font-mono: var(--font-mono);
   --font-sans: var(--font-sans);
@@ -28,8 +28,43 @@
 :root {
   --background: #ece9f5;
   --foreground: #030213;
+
   --primary: #030213;
+  --primary-foreground: #ffffff;
+
+  --secondary: #f3f3f5;
+  --secondary-foreground: #030213;
+
   --accent: #8b5cf6;
+  --accent-foreground: #ffffff;
+
+  --muted: #dcd9e8;
+  --muted-foreground: #374151;
+
+  --border: rgba(0, 0, 0, 0.15);
+  --card: rgba(255, 255, 255, 0.6);
+  --card-foreground: #030213;
+}
+
+.dark {
+  --background: #030213;
+  --foreground: #ece9f5;
+
+  --primary: #ece9f5;
+  --primary-foreground: #030213;
+
+  --secondary: #100f24;
+  --secondary-foreground: #ece9f5;
+
+  --accent: #a78bfa;
+  --accent-foreground: #030213;
+
+  --muted: #1e1b4b;
+  --muted-foreground: #9ca3af;
+
+  --border: rgba(255, 255, 255, 0.15);
+  --card: rgba(10, 10, 25, 0.6);
+  --card-foreground: #ece9f5;
 }
 
 html {
