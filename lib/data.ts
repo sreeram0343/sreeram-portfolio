@@ -34,29 +34,32 @@ export const stats = [
 
 export const skills = [
     {
-        category: "Programming Languages",
-        icon: Code,
-        items: ["Python", "Java", "C", "C++"]
-    },
-    {
-        category: "AI & Machine Learning",
+        category: "AI Engineering & Autonomous Systems",
+        description: "Designing autonomous agentic systems and cognitive RAG pipelines with self-correcting reasoning loops and MCP integrations.",
         icon: Brain,
-        items: ["Deep Learning", "Computer Vision", "NLP", "Anomaly Detection"]
+        items: ["Agentic RAG Workflows", "Multi-Agent Orchestration", "Dynamic Context Routing", "Model Context Protocol (MCP)", "Vector DBs (OpenSearch, Chroma)", "Prompt Engineering & Eval"],
+        techStack: ["LangGraph", "Python", "OpenSearch", "ChromaDB", "LLMs"]
     },
     {
-        category: "Software & Tools",
-        icon: Smartphone,
-        items: ["Flask", "MySQL", "MongoDB", "Tkinter"]
-    },
-    {
-        category: "Data & Analytics",
+        category: "Data Engineering & Cloud Architecture",
+        description: "Architecting high-throughput, AI-ready data lakehouses and ETL pipelines running on scalable cloud infrastructure.",
         icon: Database,
-        items: ["Pandas", "NumPy", "Data Visualization"]
+        items: ["Lakehouse Architectures", "Big Data Processing (PySpark)", "GCP Analytics Architecture", "Analytics Engineering (dbt)", "ETL/ELT Orchestration", "Schema Evolution & Modeling"],
+        techStack: ["Apache Iceberg", "PySpark", "dbt", "GCP", "BigQuery", "SQL"]
     },
     {
-        category: "Core Concepts",
+        category: "MLOps & Automated Infrastructure",
+        description: "Building production-grade CI/CD and MLOps pipelines to ensure rigorous testing, reproducibility, and security of intelligent systems.",
         icon: Terminal,
-        items: ["OOP", "Data Structures", "REST APIs", "System Design"]
+        items: ["Microservice Containerization", "Automated CI/CD Workflows", "Model Drift & Validation Checks", "Static Code Quality Pipelines", "Model Registries (MLflow)", "Automated Testing (PyTest)"],
+        techStack: ["Docker", "GitHub Actions", "FastAPI", "PyTest", "MLflow", "Ruff"]
+    },
+    {
+        category: "Core Engineering & Secure Deployments",
+        description: "Implementing scalable backend systems and secure user authentication integrated into continuously deployed full-stack web applications.",
+        icon: Code,
+        items: ["Backend Architecture (OOP)", "OAuth 2.0 Secure Identity", "Relational & NoSQL DBs", "Modern Frontend Frameworks", "Continuous Deployment", "Secure API Gateway Design"],
+        techStack: ["Next.js", "React", "PostgreSQL", "MongoDB", "OAuth 2.0", "Vercel / Render"]
     }
 ];
 

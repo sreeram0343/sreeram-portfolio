@@ -314,12 +314,75 @@ function Experience() {
   );
 }
 
+function Skills() {
+  const [hovered, setHovered] = useState<number | null>(null);
+
+  return (
+    <section id="skills" className="py-20 md:py-32 px-6 md:px-16 max-w-7xl mx-auto">
+      <SectionMarker num="03" label="Skills Arsenal" />
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {skills.map((category, index) => (
+          <div
+            key={category.category}
+            className="group relative border border-border p-8 md:p-10 bg-card/25 transition-all duration-300 hover:border-accent/30 flex flex-col justify-between"
+            onMouseEnter={() => setHovered(index)}
+            onMouseLeave={() => setHovered(null)}
+          >
+            {/* Soft backdrop glow on hover */}
+            <div className="absolute inset-0 bg-accent/[0.01] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            
+            <div className="relative z-10 flex flex-col h-full">
+              {/* Header */}
+              <div className="flex items-center gap-4 mb-6">
+                <div className="p-3 rounded-lg border border-border bg-background text-muted-foreground group-hover:border-accent group-hover:text-accent transition-all duration-300">
+                  <category.icon className="w-5 h-5" />
+                </div>
+                <h3 className="font-serif font-normal text-xl md:text-2xl text-foreground group-hover:text-accent transition-colors duration-300">
+                  {category.category}
+                </h3>
+              </div>
+
+              {/* Description */}
+              <p className="font-sans font-light text-foreground text-sm leading-relaxed mb-6">
+                {category.description}
+              </p>
+
+              {/* Competencies */}
+              <div className="space-y-2.5 mb-8 flex-grow">
+                {category.items.map((item, idx) => (
+                  <div key={idx} className="flex items-start gap-3 text-sm text-foreground/80 font-light">
+                    <CheckCircle2 className="w-4 h-4 text-accent shrink-0 mt-0.5" />
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Tech Tags */}
+              <div className="flex flex-wrap gap-2 pt-6 border-t border-border mt-auto">
+                {category.techStack.map((tech) => (
+                  <span
+                    key={tech}
+                    className="font-mono text-[9px] uppercase tracking-wider border border-border px-2.5 py-1 text-muted-foreground group-hover:border-accent/20 transition-all duration-300"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function CertsAndAchievements() {
   return (
     <section id="certifications" className="py-20 md:py-32 px-6 md:px-16 max-w-7xl mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 md:gap-32">
         <div>
-          <SectionMarker num="03" label="Certifications" />
+          <SectionMarker num="04" label="Certifications" />
           <div className="space-y-8">
             {certifications.map((cert, i) => (
               <div key={i} className="flex justify-between items-center group cursor-default">
@@ -333,8 +396,8 @@ function CertsAndAchievements() {
           </div>
         </div>
 
-        <div>
-          <SectionMarker num="04" label="Achievements" />
+        <div id="achievements">
+          <SectionMarker num="05" label="Achievements" />
           <div className="space-y-10 md:space-y-12">
             {achievements.map((ach, i) => (
               <div key={i} className="group">
@@ -359,7 +422,7 @@ function Contact() {
     <section id="contact" className="py-20 md:py-32 px-6 md:px-16 max-w-7xl mx-auto">
       <div className="border-t border-border pt-20 md:pt-32">
         <p className="font-mono text-xs text-accent tracking-[0.35em] uppercase mb-10">
-          05 — Contact
+          06 — Contact
         </p>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 md:gap-32">
@@ -475,6 +538,7 @@ export default function App() {
       <About />
       <Work />
       <Experience />
+      <Skills />
       <CertsAndAchievements />
       <Contact />
     </div>
