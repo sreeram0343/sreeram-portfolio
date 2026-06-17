@@ -26,49 +26,64 @@ function About() {
     <section id="about" className="py-20 md:py-32 px-6 md:px-16 max-w-7xl mx-auto">
       <SectionMarker num="—" label="About" />
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-24">
+        {/* Left Column - Detailed Bio */}
         <div>
-          <p className="font-serif font-light text-xl md:text-2xl leading-[1.8] text-foreground mb-8 italic">
-            I am a B.Tech Computer Science and Engineering student passionate about Artificial Intelligence and Machine Learning.
+          <p className="font-serif font-light text-2xl md:text-3xl leading-[1.6] text-foreground mb-8 italic">
+            I build systems at the intersection of AI Agentic Orchestration, Scalable Data Infrastructures, and Automated MLOps.
           </p>
-          <div className="space-y-6">
-            <p className="font-sans font-light text-foreground leading-[1.95] text-base">
-              Currently studying at APJ Abdul Kalam Technological University (KTU), I focus on building impactful real-world systems, AI products, and scalable applications. My interest extends to startup innovation and emerging technologies.
+          <div className="space-y-6 text-foreground/80 leading-[1.8] font-light text-sm md:text-base">
+            <p>
+              Currently pursuing my B.Tech in Computer Science and Engineering at APJ Abdul Kalam Technological University (KTU), my path is defined by a passion for creating software that doesn't just run, but thinks. I focus on taking AI models out of experimental Jupyter notebooks and embedding them into resilient, production-grade pipelines.
             </p>
-            <p className="font-sans font-light text-foreground leading-[1.95] text-base">
-              I enjoy transforming complex problems into intelligent automation solutions, from AI-driven monitoring platforms to computer vision systems.
+            <p>
+              My expertise centers around the **Model Context Protocol (MCP)**, multi-agent frameworks, and autonomous RAG workflows. I believe the future of software lies in agentic collaboration, where specialized LLM loops autonomously route context, correct queries, and call database/file tools to solve complex requirements.
+            </p>
+            <p>
+              To support these intelligent systems, I design robust data lakehouse environments utilizing **Apache Iceberg**, Google Cloud Platform (GCS, BigQuery, Vertex AI), and dbt. By bridging data engineering with MLOps, I establish strict automated testing, containerized Docker microservices, and linting pipelines to enforce reliability and prevent model drift before deployment.
+            </p>
+            <p>
+              When I'm not developing core architectures, I participate in hackathons (like winning the Google Vortexa Hackathon by building a SOC MVP in under 6 hours) or lead student initiative programs as the placement lead, striving to bridge academic knowledge with production engineering.
             </p>
           </div>
         </div>
 
-        <div>
-          <div className="mb-12 overflow-hidden bg-muted rounded-lg border border-border group relative">
+        {/* Right Column - Image & Core Focus Cards */}
+        <div className="flex flex-col gap-10">
+          <div className="overflow-hidden bg-muted rounded-lg border border-border group relative">
             <div className="absolute inset-0 bg-accent/10 group-hover:bg-transparent transition-all duration-700 z-10" />
             <img
               src="/sreeram-profile.png"
               alt="Sreeram M R"
               className="w-full object-cover group-hover:scale-105 transition-all duration-700"
-              style={{ aspectRatio: "4/3" }}
+              style={{ aspectRatio: "16/9" }}
             />
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-10">
-            {skills.slice(0, 4).map((skill) => (
-              <div key={skill.category}>
-                <p className="font-mono text-xs text-accent tracking-[0.22em] uppercase mb-4">
-                  {skill.category}
-                </p>
-                <ul className="space-y-1.5">
-                  {skill.items.map((item) => (
-                    <li
-                      key={item}
-                      className="font-mono text-xs text-muted-foreground"
-                    >
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="border border-border p-5 bg-card/10 rounded-xl hover:border-accent/20 transition-all duration-300">
+              <span className="font-mono text-[10px] text-accent tracking-widest uppercase block mb-2">01 / Agentic Focus</span>
+              <p className="font-sans font-light text-foreground/80 text-xs leading-relaxed">
+                Designing cognitive systems with LangGraph, MCP tools, and dynamic semantic routing.
+              </p>
+            </div>
+            <div className="border border-border p-5 bg-card/10 rounded-xl hover:border-accent/20 transition-all duration-300">
+              <span className="font-mono text-[10px] text-accent tracking-widest uppercase block mb-2">02 / Scale & Data</span>
+              <p className="font-sans font-light text-foreground/80 text-xs leading-relaxed">
+                Building scalable lakehouses utilizing Apache Iceberg, GCP services, PySpark, and BigQuery.
+              </p>
+            </div>
+            <div className="border border-border p-5 bg-card/10 rounded-xl hover:border-accent/20 transition-all duration-300">
+              <span className="font-mono text-[10px] text-accent tracking-widest uppercase block mb-2">03 / MLOps Discipline</span>
+              <p className="font-sans font-light text-foreground/80 text-xs leading-relaxed">
+                Structuring CI/CD automated validation pipelines, Docker containerization, and unit testing suites.
+              </p>
+            </div>
+            <div className="border border-border p-5 bg-card/10 rounded-xl hover:border-accent/20 transition-all duration-300">
+              <span className="font-mono text-[10px] text-accent tracking-widest uppercase block mb-2">04 / Core Engineering</span>
+              <p className="font-sans font-light text-foreground/80 text-xs leading-relaxed">
+                Developing robust APIs, integrating OAuth 2.0 security, and deploying full-stack Next.js applications.
+              </p>
+            </div>
           </div>
         </div>
       </div>
