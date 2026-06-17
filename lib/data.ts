@@ -81,6 +81,42 @@ export const projects = [
         featured: true
     },
     {
+        title: "Agentic RAG – Autonomous Multi-Agent AI System",
+        description: "An autonomous knowledge retrieval system built with the Model Context Protocol (MCP) and multi-agent orchestration. Utilizes dynamic context routing to determine query intent and execute parallel tool-calling workflows for high-fidelity, self-correcting responses.",
+        techStack: ["Python", "MCP", "LangGraph", "Vector DB", "LLMs"],
+        highlights: [
+            "Built autonomous workflows with multi-agent coordination via MCP",
+            "Implemented dynamic context routing for intent-based query navigation",
+            "Designed self-correcting agent loops that validate search results",
+            "Optimized system response latency for complex multi-source queries"
+        ],
+        links: {
+            github: "https://github.com/sreeram0343/agentic-rag",
+            demo: "#"
+        },
+        icon: Cpu,
+        date: "2026",
+        featured: true
+    },
+    {
+        title: "Lakehouse Pipeline – Scalable Data Engineering for AI",
+        description: "A modern data lakehouse platform designed for scalable AI workflows. Features high-throughput data ingestion, transformation, and storage utilizing Apache Iceberg and integrated with Google Cloud Services (GCS, BigQuery, Vertex AI) for unified data-to-model pipelines.",
+        techStack: ["Apache Iceberg", "Google Cloud (GCP)", "PySpark", "dbt", "BigQuery"],
+        highlights: [
+            "Architected robust data pipelines with Apache Iceberg table format",
+            "Integrated GCP storage (GCS) and BigQuery for scalable query execution",
+            "Optimized transformations and partition layout to support AI/ML workloads",
+            "Established schema evolution and time-travel capabilities for auditability"
+        ],
+        links: {
+            github: "https://github.com/sreeram0343/lakehouse-pipeline",
+            demo: "#"
+        },
+        icon: Database,
+        date: "2026",
+        featured: true
+    },
+    {
         title: "VeriFace – AI Authenticity & Deepfake Detection",
         description: "Deepfake detection system with 92% accuracy. Features real-time image verification and an optimized inference pipeline for AI-powered identity analysis.",
         techStack: ["Deep Learning", "Python", "Flask"],
@@ -117,6 +153,42 @@ export const projects = [
         icon: Database,
         date: "2025",
         featured: true
+    },
+    {
+        title: "AskDocs-RAG – Containerized Document Q&A",
+        description: "A production-ready Retrieval-Augmented Generation application for interactive document querying. Features a rigorous DevOps foundation with fully containerized microservices and automated CI/CD pipelines to ensure code and model reliability.",
+        techStack: ["Docker", "GitHub Actions", "Python", "RAG", "PyTest"],
+        highlights: [
+            "Containerized application components using multi-stage Docker builds",
+            "Designed comprehensive automated testing suites using PyTest",
+            "Built GitHub Actions CI/CD workflows for automated build, test, and lint checks",
+            "Ensured high reliability with test coverage tracking and container security scanning"
+        ],
+        links: {
+            github: "https://github.com/sreeram0343/AskDocs-RAG",
+            demo: "#"
+        },
+        icon: FileText,
+        date: "2025",
+        featured: false
+    },
+    {
+        title: "resume-score-ml – Automated Resume Ranking Service",
+        description: "An automated candidate matching and scoring system powered by Machine Learning. Utilizes semantic analysis to align resumes with job descriptions, supported by a containerized deployment and continuous testing pipeline.",
+        techStack: ["Python", "Scikit-Learn", "Docker", "CI/CD", "FastAPI"],
+        highlights: [
+            "Implemented ML models for candidate semantic matching and scoring",
+            "Built automated validation pipelines in CI/CD to prevent model drift",
+            "Deployed as a lightweight containerized REST API with FastAPI and Docker",
+            "Integrated testing checks to validate prediction accuracy before releases"
+        ],
+        links: {
+            github: "https://github.com/sreeram0343/resume-score-ml",
+            demo: "#"
+        },
+        icon: Code,
+        date: "2025",
+        featured: false
     },
     {
         title: "Netflix Content Analytics",

@@ -15,9 +15,72 @@ export const ProjectsSection = () => {
     
     const filteredProjects = projects.filter(project => {
         if (filter === "All") return true;
-        if (filter === "AI/ML") return project.title.includes("AI") || project.techStack.includes("Deep Learning");
-        if (filter === "Automation") return project.description.toLowerCase().includes("automation");
-        if (filter === "Analytics") return project.description.toLowerCase().includes("analytics");
+        
+        const titleLower = project.title.toLowerCase();
+        const descLower = project.description.toLowerCase();
+        const techStackLower = project.techStack.map(t => t.toLowerCase());
+        
+        if (filter === "AI/ML") {
+            return (
+                titleLower.includes("ai") ||
+                titleLower.includes("ml") ||
+                titleLower.includes("rag") ||
+                titleLower.includes("deepfake") ||
+                titleLower.includes("learning") ||
+                techStackLower.some(t => 
+                    t.includes("learning") || 
+                    t.includes("ml") || 
+                    t.includes("ai") || 
+                    t.includes("mcp") || 
+                    t.includes("rag") || 
+                    t.includes("llm")
+                ) ||
+                descLower.includes("machine learning") ||
+                descLower.includes("deep learning") ||
+                descLower.includes("intelligence") ||
+                descLower.includes("rag") ||
+                descLower.includes("nlp")
+            );
+        }
+        
+        if (filter === "Automation") {
+            return (
+                titleLower.includes("automation") ||
+                titleLower.includes("pipeline") ||
+                descLower.includes("automation") ||
+                descLower.includes("automated") ||
+                descLower.includes("pipeline") ||
+                descLower.includes("ci/cd") ||
+                descLower.includes("orchestration") ||
+                techStackLower.some(t => 
+                    t.includes("docker") || 
+                    t.includes("github actions") || 
+                    t.includes("ci/cd") || 
+                    t.includes("wazuh") || 
+                    t.includes("mcp") ||
+                    t.includes("pipeline")
+                )
+            );
+        }
+        
+        if (filter === "Analytics") {
+            return (
+                titleLower.includes("analytics") ||
+                titleLower.includes("analysis") ||
+                descLower.includes("analytics") ||
+                descLower.includes("analysis") ||
+                descLower.includes("dashboard") ||
+                descLower.includes("viewing") ||
+                techStackLower.some(t => 
+                    t.includes("pandas") || 
+                    t.includes("numpy") || 
+                    t.includes("sql") || 
+                    t.includes("dashboard") || 
+                    t.includes("analytics")
+                )
+            );
+        }
+        
         return true;
     });
 

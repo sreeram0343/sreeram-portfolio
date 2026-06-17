@@ -211,7 +211,7 @@ function Work() {
             <div className="py-10 md:py-12">
               <div className="grid grid-cols-1 lg:grid-cols-[48px_1fr_180px] gap-6 lg:gap-12 items-start">
                 <span className="hidden md:block font-mono text-xs text-accent tracking-widest pt-2">
-                  0{i + 1}
+                  {(i + 1).toString().padStart(2, "0")}
                 </span>
 
                 <div>
