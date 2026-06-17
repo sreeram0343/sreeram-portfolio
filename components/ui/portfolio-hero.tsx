@@ -24,7 +24,7 @@ export const PortfolioHero = ({
     ],
     tagline = "AI Engineering & Data Infrastructure",
     description = "Building autonomous systems with multi-agent workflows, scalable lakehouse pipelines, and automated MLOps infrastructure.",
-    profileImage = "https://i.postimg.cc/y8DnKLyK/albert-dera-ILip77-Sbm-OE-unsplash.jpg",
+    profileImage = "/sreeram-profile.png",
     socialLinks = [
         { icon: Github, href: "https://github.com/sreeram0343" },
         { icon: Linkedin, href: "https://www.linkedin.com/in/sreeram4/" },
