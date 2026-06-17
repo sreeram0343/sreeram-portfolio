@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { ArrowUpRight, Github, Linkedin, Mail, FileText, ArrowRight, CheckCircle2, Phone, MapPin } from "lucide-react";
 import { siteConfig, navLinks, projects, education, skills, certifications, achievements, stats } from "@/lib/data";
+import { PortfolioHero } from "@/components/ui/portfolio-hero";
 
 function SectionMarker({ num, label }: { num: string; label: string }) {
   return (
@@ -18,125 +19,7 @@ function SectionMarker({ num, label }: { num: string; label: string }) {
   );
 }
 
-function Nav() {
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? "bg-background/90 backdrop-blur-md border-b border-border" : ""
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-6 md:px-16 py-4 md:py-6 flex items-center justify-between">
-        <a
-          href="#"
-          className="font-mono text-lg font-bold tracking-[0.25em] text-foreground uppercase hover:text-accent transition-colors duration-200"
-        >
-          4
-        </a>
-        <div className="hidden md:flex items-center gap-10">
-          {navLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="font-mono text-xs tracking-[0.18em] text-muted-foreground hover:text-foreground uppercase transition-colors duration-200"
-            >
-              {link.label}
-            </a>
-          ))}
-          <a
-            href={siteConfig.resumeUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-mono text-xs tracking-[0.18em] border border-border px-5 py-2.5 text-foreground hover:bg-accent hover:text-white hover:border-accent transition-all duration-200 uppercase"
-          >
-            Resume ↗
-          </a>
-        </div>
-        
-        {/* Simple Mobile Resume Link */}
-        <a
-            href={siteConfig.resumeUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="md:hidden font-mono text-[10px] tracking-widest border border-border px-3 py-1.5 text-foreground uppercase"
-          >
-            CV ↗
-          </a>
-      </div>
-    </nav>
-  );
-}
-
-function Hero() {
-  return (
-    <section className="min-h-screen flex flex-col justify-end pb-16 pt-36 px-6 md:px-16 max-w-7xl mx-auto">
-      <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-12 md:gap-16 items-end">
-        <div>
-          <p className="font-mono text-[10px] md:text-xs text-accent tracking-[0.35em] uppercase mb-6 md:mb-10">
-            {siteConfig.title.split('|')[0]} &nbsp;·&nbsp; {siteConfig.location.split(',')[0]}
-          </p>
-          <h1 className="font-serif font-light text-[clamp(48px,12vw,140px)] leading-[0.9] tracking-tight text-foreground">
-            {siteConfig.name.split(' ')[0]}
-            <br />
-            {siteConfig.name.split(' ').slice(1).join(' ')}
-            <span className="text-accent">.</span>
-          </h1>
-        </div>
-
-        <div className="pb-1">
-          <p className="font-sans font-light text-foreground text-base md:text-lg leading-[1.85] mb-10">
-            {siteConfig.description}
-          </p>
-          <div className="flex items-center gap-6 flex-wrap">
-            <a
-              href="#projects"
-              className="group font-mono flex items-center gap-2.5 bg-primary text-primary-foreground px-7 py-3.5 text-xs tracking-widest uppercase hover:bg-accent hover:text-white transition-all duration-200"
-            >
-              View Work
-              <ArrowUpRight className="w-3 h-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </a>
-            <div className="flex items-center gap-5">
-              {siteConfig.socials.map((social) => (
-                <a
-                  key={social.name}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-foreground transition-colors duration-200"
-                  aria-label={social.name}
-                >
-                  <social.icon className="w-4 h-4" />
-                </a>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="mt-20 h-px bg-border" />
-
-      <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-6">
-        {stats.map((stat) => (
-          <div key={stat.label} className="flex items-baseline gap-3">
-            <span className="font-serif font-light text-2xl md:text-3xl text-foreground">
-              {stat.value}
-            </span>
-            <span className="font-mono text-[10px] md:text-xs text-muted-foreground tracking-wide leading-tight">
-              {stat.label}
-            </span>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-}
+// Legacy Nav and Hero removed in favor of PortfolioHero component
 
 function About() {
   return (
@@ -533,8 +416,12 @@ function Contact() {
 export default function App() {
   return (
     <div className="bg-background text-foreground min-h-screen overflow-x-hidden selection:bg-accent selection:text-white">
-      <Nav />
-      <Hero />
+      <PortfolioHero
+        logoText="4"
+        navLinks={navLinks}
+        tagline={siteConfig.title.split("|")[0].trim()}
+        description={siteConfig.description}
+      />
       <About />
       <Work />
       <Experience />
