@@ -127,15 +127,6 @@ function ArchitectureDiagram({ project }: { project: FlagshipProject }) {
       </div>
 
       <div className="relative w-full h-[calc(100%-38px)]">
-        {project.id === "thinklm" && (
-          <div className="absolute top-3 left-3 z-20 bg-black/40 border border-white/10 p-1 rounded-lg backdrop-blur-md shadow-lg pointer-events-none">
-            <img 
-              src="/thinklm-logo.png" 
-              alt="ThinkLM Logo" 
-              className="h-4.5 w-auto object-contain rounded"
-            />
-          </div>
-        )}
         {/* SVG Drawing Canvas for Connections */}
         <svg 
           className="absolute inset-0 w-full h-full pointer-events-none" 
@@ -332,18 +323,9 @@ function Flagships() {
                     <span className="font-mono text-xs text-muted-foreground/60 font-medium">{p.date}</span>
                   </div>
 
-                  <div className="flex items-center gap-3.5 mb-2">
-                    <h3 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground font-light group-hover:text-accent transition-colors duration-300">
-                      {p.title}
-                    </h3>
-                    {p.id === "thinklm" && (
-                      <img 
-                        src="/thinklm-logo.png" 
-                        alt="ThinkLM Logo" 
-                        className="h-7 w-auto object-contain rounded-md shadow-md border border-white/5"
-                      />
-                    )}
-                  </div>
+                  <h3 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground font-light mb-2 group-hover:text-accent transition-colors duration-300">
+                    {p.title}
+                  </h3>
                   <p className="font-mono text-xs text-accent tracking-wide mb-6 uppercase font-semibold">
                     {p.subtitle}
                   </p>
@@ -401,7 +383,16 @@ function Flagships() {
               </div>
 
               {/* Visualization Column */}
-              <div className="lg:col-span-5 w-full">
+              <div className="lg:col-span-5 w-full flex flex-col gap-6">
+                {p.id === "thinklm" && (
+                  <div className="relative w-full aspect-[4/3] bg-card border border-border rounded-2xl overflow-hidden shadow-2xl">
+                    <img 
+                      src="/thinklm-logo.png" 
+                      alt="ThinkLM Logo" 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                )}
                 <ArchitectureDiagram project={p} />
               </div>
             </div>
