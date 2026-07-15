@@ -25,7 +25,7 @@ export const PortfolioHero = ({
     ],
     tagline = "AI Engineering & Data Infrastructure",
     description = "Building autonomous systems with multi-agent workflows, scalable lakehouse pipelines, and automated MLOps infrastructure.",
-    profileImage = "/sreeram-profile.png",
+    profileImage = "/sreeram-profile.jpg",
     socialLinks = [
         { icon: Github, href: "https://github.com/sreeram0343" },
         { icon: Linkedin, href: "https://www.linkedin.com/in/sreeram4/" },

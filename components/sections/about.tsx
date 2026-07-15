@@ -47,7 +47,7 @@ export const AboutSection = () => {
                 >
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 z-10 group-hover:opacity-0 transition-opacity duration-500" />
                     <img
-                        src="/sreeram-profile.png"
+                        src="/sreeram-profile.jpg"
                         alt="Sreeram M R"
                         className="object-cover w-full h-full grayscale group-hover:grayscale-0 transition-all duration-500 scale-105 group-hover:scale-100"
                     />

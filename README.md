@@ -1,6 +1,6 @@
 # Sreeram M R - AI/ML Inovator Portfolio
 
-![Tech Hero Portfolio Preview](/public/sreeram-profile.png)
+![Tech Hero Portfolio Preview](/public/sreeram-profile.jpg)
 
 A high-performance, immersive "Tech Hero" portfolio website built for Sreeram M R, showcasing expertise in AI, Machine Learning, and Automated Security.
 
