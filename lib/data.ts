@@ -131,7 +131,7 @@ export const flagshipProjects: FlagshipProject[] = [
             "Containerized deployment leveraging Docker for isolated environments and repeatable builds."
         ],
         links: {
-            github: "https://github.com/sreeram0343/AetherAI",
+            github: "https://github.com/sreeram0343/Aether-AI",
             demo: "#"
         },
         icon: Workflow,
@@ -249,7 +249,7 @@ export const projects: Project[] = [
         description: "Production-ready multi-agent Retrieval-Augmented Generation system using LangGraph, Gemini, embeddings, and Qdrant. Implements dynamic query routing and evaluation loops.",
         techStack: ["LangGraph", "Google Gemini", "Qdrant", "Python", "RAG"],
         links: {
-            github: "https://github.com/sreeram0343/agentic-rag"
+            github: "https://github.com/sreeram0343/AgenticRAG-Orchestrator"
         },
         icon: Cpu,
         featured: false,
@@ -261,7 +261,7 @@ export const projects: Project[] = [
         description: "A GPT-style transformer chatbot built from scratch to understand attention mechanisms, positional encoding, and transformer decoder architecture.",
         techStack: ["Python", "PyTorch", "Deep Learning", "NLP"],
         links: {
-            github: "https://github.com/sreeram0343/projects"
+            github: "https://github.com/sreeram0343/simple-transformer-chatbot"
         },
         icon: Play,
         featured: false,
@@ -273,7 +273,7 @@ export const projects: Project[] = [
         description: "Machine learning regression project using Scikit-learn with rigorous data preprocessing, feature engineering, model evaluation, and prediction pipeline.",
         techStack: ["Scikit-learn", "Python", "Pandas", "NumPy"],
         links: {
-            github: "https://github.com/sreeram0343/projects"
+            github: "https://github.com/sreeram0343/house-price-prediction"
         },
         icon: Code,
         featured: false,
@@ -285,7 +285,7 @@ export const projects: Project[] = [
         description: "Modern data engineering pipeline designed for scale. Employs Apache Spark for ETL processing, Apache Iceberg for transaction management, and MinIO storage.",
         techStack: ["Apache Spark", "Apache Iceberg", "MinIO", "Docker Compose", "Python"],
         links: {
-            github: "https://github.com/sreeram0343/lakehouse-pipeline"
+            github: "https://github.com/sreeram0343/lakehouse-ingestion-pipeline"
         },
         icon: Database,
         featured: false,
@@ -297,7 +297,7 @@ export const projects: Project[] = [
         description: "Reddit-inspired civic discussion and issue reporting platform. Enables localized community engagement, civic reporting, and discussion channels focused on Kerala.",
         techStack: ["React", "Next.js", "Node.js", "Tailwind CSS", "PostgreSQL"],
         links: {
-            github: "https://github.com/sreeram0343/projects"
+            github: "https://github.com/sreeram0343/nammudekerala"
         },
         icon: FileText,
         featured: false,
